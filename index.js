@@ -13,6 +13,5 @@ const censor = (censorWord, content) => {
   return content.replace(new RegExp(censorWord, 'g'), 'BLEEP');
 }
 
-const violenceCensor = function(content){
-  return censor('violence', content);
-}
+const violenceCensor = censor.bind(null, 'violence');
+const drugsCensor = censor.bind(null, 'drugs');
