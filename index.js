@@ -8,3 +8,11 @@ const digitalClock = {
     }, 1000)
   }
 }
+
+const censor = (censorWord, content) => {
+  return content.replace(new RegExp(censorWord, 'g'), 'BLEEP');
+}
+
+const violenceCensor = function(content){
+  return censor('violence', content);
+}
